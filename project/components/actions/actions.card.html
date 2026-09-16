@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" viewport="700x220" name="Actions" subtitle="Button, IconButton, TextLink" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-canvas);font-family:var(--font-sans)}#root{padding:20px;display:flex;flex-direction:column;gap:16px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}</style>
+<div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, TextLink, Icon } = window.SEOConsoleDesignSystem_8b9179;
+function App(){
+  React.useEffect(()=>{ if(window.lucide) window.lucide.createIcons(); },[]);
+  return (
+    <React.Fragment>
+      <div className="row">
+        <Button>Start free</Button>
+        <Button variant="secondary">Watch demo</Button>
+        <Button variant="text">Log in</Button>
+        <Button disabled>Run audit</Button>
+      </div>
+      <div className="row" style={{background:'#101010',padding:'12px',borderRadius:8}}>
+        <Button variant="inverse">Choose plan</Button>
+      </div>
+      <div className="row">
+        <IconButton label="Previous"><Icon name="arrow-left" size={16}/></IconButton>
+        <IconButton label="Next"><Icon name="arrow-right" size={16}/></IconButton>
+        <TextLink href="#">Read the guide</TextLink>
+        <TextLink href="#" tone="accent">Customer story</TextLink>
+      </div>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>

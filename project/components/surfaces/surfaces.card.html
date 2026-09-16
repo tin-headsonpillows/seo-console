@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Surfaces" subtitle="Feature, product-mockup, customer-proof, pricing, hero, CTA" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-canvas)}#root{padding:20px;display:flex;flex-direction:column;gap:16px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}</style>
+<div id="root"></div>
+<script type="text/babel">
+const { FeatureCard, FeatureIconCard, ProductMockupCard, CustomerProofCard, PricingTierCard, HeroAppMockupCard, CtaBandLight, Avatar, Icon } = window.SEOConsoleDesignSystem_8b9179;
+function App(){
+  React.useEffect(()=>{ if(window.lucide) window.lucide.createIcons(); },[]);
+  return (
+    <React.Fragment>
+      <div className="grid">
+        <FeatureCard icon={<Icon name="zap" size={24}/>} title="Automated audits" description="Run a full technical crawl on a schedule you set."/>
+        <FeatureIconCard icon={<Icon name="link" size={20}/>} title="Backlink tracking" description="See every link gained or lost, daily."/>
+        <CustomerProofCard avatar={<Avatar initials="JC" fill="violet"/>} name="Jane Cho" role="Head of SEO, Loop Retail" rating={5} quote="We cut our audit turnaround from two days to twenty minutes."/>
+      </div>
+      <div className="grid">
+        <PricingTierCard name="Starter" price="$29" features={['1 site','Weekly audits']}/>
+        <PricingTierCard featured name="Pro" price="$79" features={['10 sites','Daily audits']}/>
+        <ProductMockupCard><div style={{fontFamily:'var(--body-sm-family)',fontSize:13,color:'var(--text-muted)'}}>Keyword grid fragment</div></ProductMockupCard>
+      </div>
+      <HeroAppMockupCard><div style={{fontFamily:'var(--body-sm-family)',fontSize:13,color:'var(--text-muted)'}}>Dashboard mockup fragment</div></HeroAppMockupCard>
+      <CtaBandLight heading="Clearer, faster SEO decisions" subline="Start free — no card required."/>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>

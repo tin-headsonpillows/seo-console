@@ -1,0 +1,23 @@
+<!-- @dsCard group="Components" viewport="700x140" name="Forms" subtitle="Text input — default, focus, error" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-canvas)}#root{padding:20px;display:flex;gap:16px;flex-wrap:wrap}</style>
+<div id="root"></div>
+<script type="text/babel">
+const { TextInput, Icon } = window.SEOConsoleDesignSystem_8b9179;
+function App(){
+  React.useEffect(()=>{ if(window.lucide) window.lucide.createIcons(); },[]);
+  return (
+    <React.Fragment>
+      <TextInput label="Site URL" placeholder="https://example.com" iconLeft={<Icon name="globe" size={16}/>} style={{width:220}}/>
+      <TextInput label="Work email" value="not-an-email" error="Enter a valid email address" style={{width:220}}/>
+      <TextInput label="Disabled" placeholder="Locked" disabled style={{width:220}}/>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>

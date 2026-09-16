@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Layout" subtitle="Wordmark, hero band, footer" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-canvas)}</style>
+<div id="root"></div>
+<script type="text/babel">
+const { HeroBand, HeroAppMockupCard, Footer, Button, Wordmark } = window.SEOConsoleDesignSystem_8b9179;
+function App(){
+  return (
+    <React.Fragment>
+      <HeroBand
+        heading="The better way to monitor your search performance"
+        subline="Automated audits, keyword tracking and reporting in one console."
+        actions={<React.Fragment><Button href="#">Start free</Button><Button variant="secondary">Watch demo</Button></React.Fragment>}
+        mockup={<HeroAppMockupCard><div style={{fontFamily:'var(--body-sm-family)',fontSize:13,color:'var(--text-muted)'}}>Dashboard fragment</div></HeroAppMockupCard>}
+      />
+      <Footer columns={[{title:'Projects',links:['Overview','Pricing']},{title:'Audits',links:['Technical SEO']},{title:'Reports',links:['Rankings']},{title:'Resources',links:['Blog']}]}/>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>

@@ -1,0 +1,39 @@
+<!-- @dsCard group="Components" viewport="760x420" name="Dashboard" subtitle="Top tab nav, metric cards, filters, date range, data table, sign-in" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--db-bg)}#root{padding:20px;display:flex;flex-direction:column;gap:16px}.row{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}</style>
+<div id="root" class="db-scope"></div>
+<script type="text/babel">
+const { MetricCard, TrendPill, GoogleSignInButton, ThemeToggle, FilterPopover, DateRangePopover, DataTable, TopTabNav, Icon } = window.SEOConsoleDesignSystem_8b9179;
+function App(){
+  const [filters, setFilters] = React.useState({ contains:'', position:0, trend:'all', branded:'all', question:false, longtail:false, ai:false });
+  React.useEffect(()=>{ if(window.lucide) window.lucide.createIcons(); },[]);
+  return (
+    <React.Fragment>
+      <div className="row">
+        <MetricCard label="Total clicks" value="489" color="var(--db-clicks)" delta="+12.4%" deltaGood />
+        <MetricCard label="Average position" value="9.4" color="var(--db-position)" active={false} />
+      </div>
+      <div className="row" style={{alignItems:'center'}}>
+        <TrendPill pct={12.4}/><TrendPill pct={-4.2}/><TrendPill pct={-1.1} invert/>
+        <GoogleSignInButton/>
+        <ThemeToggle value="light"/>
+      </div>
+      <div className="row">
+        <FilterPopover value={filters} onChange={setFilters} dimension="query"/>
+        <DateRangePopover label="Last 28 days" range={{start:'2026-08-18',end:'2026-09-14'}} presets={[{id:'28d',label:'Last 28 days'},{id:'3m',label:'Last 3 months'}]} compareOptions={[{id:'none',label:'Disabled'},{id:'previous',label:'Previous period'}]} compareMode="none"/>
+      </div>
+      <DataTable
+        columns={[{field:'query',label:'Query'},{field:'clicks',label:'clicks',align:'right',color:'var(--db-clicks)'},{field:'impressions',label:'impressions',align:'right',color:'var(--db-impressions)'}]}
+        rows={[{query:'builder hall 3 base',clicks:15,impressions:889},{query:'coc base copy',clicks:8,impressions:863}]}
+        keyField="query"
+      />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>

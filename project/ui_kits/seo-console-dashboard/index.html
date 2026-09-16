@@ -1,0 +1,68 @@
+<!-- @dsCard group="Dashboard" viewport="1400x900" name="Dashboard App" subtitle="Sign-in, Performance, Opportunities, Settings — click-through" -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SEO Console — Dashboard</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>*{box-sizing:border-box}body{margin:0}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="./chrome.jsx"></script>
+<script type="text/babel" src="./SignInScreen.jsx"></script>
+<script type="text/babel" src="./PerformanceScreen.jsx"></script>
+<script type="text/babel" src="./OpportunitiesScreen.jsx"></script>
+<script type="text/babel" src="./SettingsScreen.jsx"></script>
+<script type="text/babel">
+function App() {
+  const [signedIn, setSignedIn] = React.useState(false);
+  const [tab, setTab] = React.useState("performance");
+  const [dark, setDark] = React.useState(false);
+  const [showSettings, setShowSettings] = React.useState(false);
+  const [filters, setFilters] = React.useState({ contains: "", position: 0, trend: "all", branded: "all", question: false, longtail: false, ai: false });
+  const [dimension, setDimension] = React.useState("query");
+  const compareOn = filters.trend !== "all";
+
+  React.useEffect(() => { if (window.lucide) window.lucide.createIcons(); }, [tab, showSettings]);
+
+  if (!signedIn) return <window.SignInScreen onNavigate={setTab} onSignIn={() => setSignedIn(true)} />;
+
+  const user = { email: "jane@cocbasemelon.weebly.com", name: "Jane", picture: null };
+  const properties = ["https://cocbasemelon.weebly.com/"];
+
+  return (
+    <window.DashboardShell
+      active={tab}
+      onSelect={setTab}
+      property={properties[0]}
+      properties={properties}
+      user={user}
+      dark={dark}
+      onSettings={() => setShowSettings(true)}
+      onSignOut={() => setSignedIn(false)}
+    >
+      {tab === "performance" && (
+        <window.PerformanceScreen compareOn={compareOn} filters={filters} onFilters={setFilters} dimension={dimension} onDimension={setDimension} />
+      )}
+      {tab === "opportunities" && <window.OpportunitiesScreen />}
+      {(tab === "analytics" || tab === "indexing" || tab === "inspect") && (
+        <div style={{ borderRadius: "var(--db-radius-lg)", border: "1px solid var(--db-border)", background: "var(--db-surface)", padding: "40px", textAlign: "center", color: "var(--db-muted)", fontFamily: "var(--db-font-sans)" }}>
+          Not in this UI kit pass — see readme.md.
+        </div>
+      )}
+      {showSettings && (
+        <window.SettingsScreen dark={dark} onThemeChange={(t) => setDark(t === "dark")} onClose={() => setShowSettings(false)} />
+      )}
+    </window.DashboardShell>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

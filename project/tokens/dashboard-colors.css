@@ -1,0 +1,17 @@
+/* Dashboard product tokens — scoped to .db-scope (not :root) so they never leak into the
+   marketing-site tokens. Values copied verbatim from the app codebase's globals.css —
+   ground truth over any framework default. Dark mode is the .db-dark modifier class,
+   applied by ThemeToggle / the "dark" segmented option, not prefers-color-scheme. */
+.db-scope{
+--db-bg:#f6f7f9;--db-surface:#ffffff;--db-border:#e3e6ea;--db-fg:#1f2328;--db-muted:#5b6470;
+--db-accent:#1a73e8;--db-accent-soft:#e8f0fe;
+--db-clicks:#4285f4;--db-impressions:#5e35b1;--db-ctr:#00897b;--db-position:#f9ab00;
+--db-good:#188038;--db-bad:#d93025;
+--db-radius-sm:6px;--db-radius-md:8px;--db-radius-lg:12px;--db-radius-xl:16px;
+}
+.db-scope.db-dark{
+--db-bg:#0d1117;--db-surface:#161b22;--db-border:#2a313c;--db-fg:#e6edf3;--db-muted:#9aa4b2;
+--db-accent:#4c8dff;--db-accent-soft:#16233b;
+--db-clicks:#5b9bff;--db-impressions:#b39ddb;--db-ctr:#4db6ac;--db-position:#ffca28;
+--db-good:#4ade80;--db-bad:#f87171;
+}

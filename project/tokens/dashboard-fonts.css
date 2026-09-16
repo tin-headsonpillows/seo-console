@@ -1,0 +1,4 @@
+/* Geist — the dashboard app's real font (next/font/google Geist), genuinely available on
+   Google Fonts. No substitution needed here, unlike the marketing system's Manrope. */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap");
+:root{--db-font-sans:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}

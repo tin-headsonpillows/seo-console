@@ -1,0 +1,48 @@
+:root{
+/* ── Base palette ─────────────────────────────────────────── */
+--black-950:#101010;--black-925:#1a1a1a;--black-900:#111111;--black-800:#242424;
+--gray-700:#374151;--gray-500:#6b7280;--gray-450:#898989;--gray-400:#a1a1aa;
+--gray-200:#e5e7eb;--gray-100:#f3f4f6;--gray-75:#f5f5f5;--gray-50:#f8f9fa;--white:#ffffff;
+--blue-500:#3b82f6;--green-500:#10b981;--amber-500:#f59e0b;--red-500:#ef4444;
+--orange-400:#fb923c;--pink-500:#ec4899;--violet-500:#8b5cf6;--emerald-400:#34d399;
+
+/* ── Action ───────────────────────────────────────────────── */
+--color-primary:var(--black-900);
+--color-primary-active:var(--black-800);
+--color-primary-disabled:var(--gray-200);
+--color-accent:var(--blue-500);
+
+/* ── Text ─────────────────────────────────────────────────── */
+--text-ink:var(--black-900);
+--text-body:var(--gray-700);
+--text-muted:var(--gray-500);
+--text-muted-soft:var(--gray-450);
+--text-on-primary:var(--white);
+--text-on-dark:var(--white);
+--text-on-dark-soft:var(--gray-400);
+--text-link:var(--black-900);
+
+/* ── Surface ──────────────────────────────────────────────── */
+--surface-canvas:var(--white);
+--surface-soft:var(--gray-50);
+--surface-card:var(--gray-75);
+--surface-strong:var(--gray-200);
+--surface-dark:var(--black-950);
+--surface-dark-elevated:var(--black-925);
+
+/* ── Border ───────────────────────────────────────────────── */
+--border-hairline:var(--gray-200);
+--border-hairline-soft:var(--gray-100);
+--border-on-dark:#2a2a2a;
+
+/* ── Semantic ─────────────────────────────────────────────── */
+--color-success:var(--green-500);
+--color-warning:var(--amber-500);
+--color-error:var(--red-500);
+
+/* ── Badge pastels (tags, avatar fills, rating stars) ─────── */
+--badge-orange:var(--orange-400);
+--badge-pink:var(--pink-500);
+--badge-violet:var(--violet-500);
+--badge-emerald:var(--emerald-400);
+}

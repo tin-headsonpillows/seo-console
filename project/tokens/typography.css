@@ -1,0 +1,28 @@
+:root{
+/* ── Families ─────────────────────────────────────────────── */
+--font-display:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+--font-sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+/* ── Weights ──────────────────────────────────────────────── */
+--weight-regular:400;--weight-medium:500;--weight-semibold:600;
+
+/* ── Display scale (Manrope 600, negative tracking) ───────── */
+--display-xl-family:var(--font-display);--display-xl-size:64px;--display-xl-weight:600;--display-xl-leading:1.05;--display-xl-tracking:-2px;
+--display-lg-family:var(--font-display);--display-lg-size:48px;--display-lg-weight:600;--display-lg-leading:1.1;--display-lg-tracking:-1.5px;
+--display-md-family:var(--font-display);--display-md-size:36px;--display-md-weight:600;--display-md-leading:1.15;--display-md-tracking:-1px;
+--display-sm-family:var(--font-display);--display-sm-size:28px;--display-sm-weight:600;--display-sm-leading:1.2;--display-sm-tracking:-0.5px;
+
+/* ── Title scale (Inter 600) ──────────────────────────────── */
+--title-lg-family:var(--font-sans);--title-lg-size:22px;--title-lg-weight:600;--title-lg-leading:1.3;--title-lg-tracking:-0.3px;
+--title-md-family:var(--font-sans);--title-md-size:18px;--title-md-weight:600;--title-md-leading:1.4;--title-md-tracking:0;
+--title-sm-family:var(--font-sans);--title-sm-size:16px;--title-sm-weight:600;--title-sm-leading:1.4;--title-sm-tracking:0;
+
+/* ── Body & UI (Inter) ────────────────────────────────────── */
+--body-md-family:var(--font-sans);--body-md-size:16px;--body-md-weight:400;--body-md-leading:1.5;--body-md-tracking:0;
+--body-sm-family:var(--font-sans);--body-sm-size:14px;--body-sm-weight:400;--body-sm-leading:1.5;--body-sm-tracking:0;
+--caption-family:var(--font-sans);--caption-size:13px;--caption-weight:500;--caption-leading:1.4;--caption-tracking:0;
+--button-family:var(--font-sans);--button-size:14px;--button-weight:600;--button-leading:1;--button-tracking:0;
+--nav-link-family:var(--font-sans);--nav-link-size:14px;--nav-link-weight:500;--nav-link-leading:1.4;--nav-link-tracking:0;
+--code-family:var(--font-mono);--code-size:14px;--code-weight:400;--code-leading:1.5;--code-tracking:0;
+}

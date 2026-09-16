@@ -1,0 +1,37 @@
+<!-- @dsCard group="Components" viewport="700x180" name="Display" subtitle="Avatar, badge, rating stars, icon" -->
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-canvas)}#root{padding:20px;display:flex;flex-direction:column;gap:16px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}</style>
+<div id="root"></div>
+<script type="text/babel">
+const { Avatar, Badge, RatingStars, Icon } = window.SEOConsoleDesignSystem_8b9179;
+function App(){
+  React.useEffect(()=>{ if(window.lucide) window.lucide.createIcons(); },[]);
+  return (
+    <React.Fragment>
+      <div className="row">
+        <Avatar initials="JC" fill="violet"/>
+        <Avatar initials="TK" fill="orange"/>
+        <Avatar initials="SM" fill="emerald"/>
+        <Avatar initials="AL"/>
+      </div>
+      <div className="row">
+        <Badge>Product</Badge>
+        <Badge tone="emerald">New</Badge>
+        <Badge tone="pink">Article</Badge>
+      </div>
+      <div className="row">
+        <RatingStars rating={5}/>
+        <Icon name="search" size={20}/>
+        <Icon name="globe" size={20}/>
+        <Icon name="check" size={20}/>
+      </div>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>

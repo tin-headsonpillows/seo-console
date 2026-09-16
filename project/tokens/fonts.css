@@ -1,0 +1,4 @@
+/* Webfonts. Manrope (display) + Inter (UI/body) + JetBrains Mono (code).
+   Served from Google Fonts — no licensed binaries were provided with the source doc.
+   Replace these with self-hosted @font-face rules if the brand ships its own files. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");

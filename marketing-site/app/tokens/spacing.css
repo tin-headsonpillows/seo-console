@@ -1,0 +1,25 @@
+:root{
+/* 4px base unit */
+--space-xxs:4px;--space-xs:8px;--space-sm:12px;--space-md:16px;
+--space-lg:24px;--space-xl:32px;--space-xxl:48px;--space-section:96px;
+
+/* Layout */
+--content-max:1200px;
+--gutter-card:var(--space-lg);      /* 24px between cards in a grid */
+--gutter-footer:var(--space-md);    /* 16px inside footer columns */
+--pad-card:var(--space-xl);         /* 32px — feature + pricing cards */
+--pad-card-compact:var(--space-lg); /* 24px — proof + product-mockup cards */
+--pad-band:var(--space-section);    /* 96px vertical band rhythm */
+--pad-cta-band:var(--space-xxl);    /* 48px */
+--pad-footer:64px;
+
+/* Control metrics */
+--control-height:40px;
+--control-pad-x:20px;
+--control-pad-y:12px;
+--input-pad-x:14px;
+--input-pad-y:10px;
+--nav-height:64px;
+--icon-button-size:36px;
+--avatar-size:36px;
+}
