@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { TopNav, type NavItem } from "../navigation/TopNav";
 import { Wordmark } from "../layout/Wordmark";
 
@@ -15,7 +15,6 @@ const NAV_ITEMS: NavItem[] = [
 
 export function SiteNav() {
   const pathname = usePathname();
-  const router = useRouter();
   return (
     <TopNav
       logo={
@@ -25,8 +24,6 @@ export function SiteNav() {
       }
       items={NAV_ITEMS}
       activeHref={pathname}
-      onLoginClick={() => router.push("/login")}
-      onStartClick={() => router.push("/login")}
     />
   );
 }

@@ -2,7 +2,6 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import { Button } from "../actions/Button";
-import { TextLink } from "../actions/TextLink";
 
 export interface NavItem {
   label: string;
@@ -13,13 +12,11 @@ export interface TopNavProps {
   logo?: ReactNode;
   items?: NavItem[];
   activeHref?: string | null;
-  onLoginClick?: () => void;
-  onStartClick?: () => void;
   right?: ReactNode;
   style?: CSSProperties;
 }
 
-export function TopNav({ logo, items = [], activeHref, onLoginClick, onStartClick, right, style }: TopNavProps) {
+export function TopNav({ logo, items = [], activeHref, right, style }: TopNavProps) {
   return (
     <header
       style={{
@@ -59,8 +56,7 @@ export function TopNav({ logo, items = [], activeHref, onLoginClick, onStartClic
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "var(--space-md)", flex: "0 0 auto" }}>
         {right}
-        <TextLink onClick={onLoginClick}>Log in</TextLink>
-        <Button onClick={onStartClick}>Start free</Button>
+        <Button href="https://seo-console-zoro.vercel.app/">Try for Free</Button>
       </div>
     </header>
   );
